@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<div class="hero_area">
+    <header class="header_section">
+        <div class="header_bottom">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container">
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <span>
+                            Allserve Restaurant and Club
+                        </span>
+                        <span style="font-style: italic; color: rgb(194, 178, 55);">
+                            simply the best
+                        </span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class=""></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+                        <ul class="navbar-nav  ">
+                            <li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'home' %}">Home <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item {% if request.resolver_match.url_name == 'about' %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'about' %}"> About</a>
+                            </li>
+                            <li class="nav-item {% if request.resolver_match.url_name == 'services' %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'services' %}"> Services </a>
+                            </li>
+                            <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+                            </li>
+                            <li class="nav-item {% if request.resolver_match.url_name == 'book' %}active{% endif %}">
+                                <a class="nav-link" href="{% url 'book' %}">Book Now</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    </div>
+
+<section class="about_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 px-0">
+                <div class="img_container">
+                    <div class="img-box">
+                        <img src="{% static 'images/about.jpg' %}" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 px-0">
+                <div class="detail-box">
+                    <div class="heading_container ">
+                        <h2>
+                            Who Are We?
+                        </h2>
+                    </div>
+                    <p>
+                        Allserve Restaurant offers a wide variety of services ranging from catering services and recreational
+                        services to
+                        conference meetings holding services and comfortable self-contained lodging that you can book and
+                        stay with us for as long as you
+                        want.
+                        <br>
+                        Our staff are well qualified and experienced enough and we trust that you'd love your stay with
+                        us.
+                        We are located all over the country. In case of any query:
+                    </p>
+                    <div class="btn-box">
+                        <a href="{% url 'contact' %}">
+                            Contact us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

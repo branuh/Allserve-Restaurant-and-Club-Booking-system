@@ -1,0 +1,381 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Allserve Restaurant and Club{% endblock %}
+
+{% block hero_content %}
+<div class="hero_bg_box">
+    <div class="img-box">
+        <img src="{% static 'images/overview.jpg' %}" alt="">
+    </div>
+</div>
+<section class=" slider_section ">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="detail-box">
+                                <h1>
+                                    Welcome to <br>
+                                    <span>
+                                        Our Restaurant
+                                    </span>
+                                </h1>
+                                <p>
+                                    We offer vast varieties of services ranging from comfortable self-contained lodgings,
+                                    Recreational services,club and catering services.
+                                </p>
+                                <div class="btn-box">
+                                    <a href="{% url 'about' %}" class="btn-1"> Read more </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="detail-box">
+                                <h1>
+                                    Book Now <br>
+                                    <span>
+                                        With us
+                                    </span>
+                                </h1>
+                                <p>
+                                    To enjoy our services and have a good experience with us.
+                                </p>
+                                <div class="btn-box">
+                                    <a href="{% url 'book' %}" class="btn-1"> Book now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="detail-box">
+                                <h1>
+                                    We value<br>
+                                    <span>
+                                        your feedback
+                                    </span>
+                                </h1>
+                                <p>
+                                    If you feel there is anything we can improve on,or want to give ratings to our company,
+                                    please leave a review.
+                                </p>
+                                <div class="btn-box">
+                                    <a href="{% url 'contact' %}" class="btn-1"> Review</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container idicator_container">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+    <section class="about_section layout_padding">
+        <div class="row">
+            <div class="col-md-6 px-0">
+                <div class="img_container">
+                    <div class="img-box">
+                        <img src="{% static 'images/about.jpg' %}" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 px-0">
+                <div class="detail-box">
+                    <div class="heading_container ">
+                        <h2>
+                            Who Are We?
+                        </h2>
+                    </div>
+                    <p>
+                        Allserve Restaurant offers a wide variety of services ranging from catering services and recreational services to
+                        conference meetings holding services and comfortable self-contained lodging that you can book and stay with us for as long as you
+                        want.
+                        <br>
+                        Our staff are well ualified and experienced enough and we trust that you'd love our stay.
+                        We are located all over the country.In case of any uerry:
+                    </p>
+                    <div class="btn-box">
+                        <a href="{% url 'contact' %}">
+                            Contact us
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="service_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>
+                    Our services
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="box ">
+                        <div class="img-box">
+                            <img src="{% static 'images/images (1).jpeg' %}" alt="restaurant" height="100%" width="100%">
+                        </div>
+                        <div class="detail-box">
+                            <br>
+                            <h6>
+                                Accommodation
+                            </h6>
+                            <p>
+                                We have good accommodation ,spaceous self-contained houses just for you!
+                            </p>
+                            <a href="{% url 'services' %}">
+                                Read more
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="box ">
+                        <div class="img-box">
+                            <img src="{% static 'images/images (2).jpeg' %}" alt="restaurant" height="100%" width="100%">
+                        </div>
+                        <div class="detail-box">
+                            <h6>
+                                Recreation
+                            </h6>
+                            <p>
+                                We have the best recreational activities across all our branches,
+                                <br>
+                                ranging from swimming pools to pool tables.
+                            </p>
+                            <br>
+                            <a href="{% url 'services' %}">
+                                Read More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="box ">
+                        <div class="img-box">
+                            <img src="{% static 'images/images.jpeg' %}" alt="restaurant" height="100%" width="100%">
+                        </div>
+                        <div class="detail-box">
+                            <h6>
+                                Catering
+                            </h6>
+                            <p>
+                                We offer the best meals for all recipes,foods and drinks.
+                                <br>
+                                <br>
+                                All your favourite is here!
+                            </p>
+                            <a href="{% url 'services' %}">
+                                Read More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="client_section layout_padding">
+        <div class="container ">
+            <div class="heading_container heading_center">
+                <h2>
+                    Reviews
+                </h2>
+            </div>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="box">
+                            <div class="img-box">
+                                <img src="{% static 'images/5.jpg' %}" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h4>
+                                    Branuh
+                                </h4>
+                                <p>
+                                    I had the best time at your Restaurant.Thanks for not letting me down last summer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="box">
+                            <div class="img-box">
+                                <img src="{% static 'images/logo3.JPG' %}" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h4>
+                                    Fatsey
+                                </h4>
+                                <p>
+                                    Everything from the attendants to the services was just fab.You are the best!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="box">
+                            <div class="img-box">
+                                <img src="{% static 'images/militao.jpg' %}" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h4>
+                                    Militao
+                                </h4>
+                                <p>
+                                    I liked the order in the restaurant.I enjoyed my stay with you and just would like to spend another time here.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel_btn-box">
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact_section layout_padding">
+        <div class="contact_bg_box">
+            <div class="img-box">
+                <img src="{% static 'images/images.jpeg' %}" alt="">
+            </div>
+        </div>
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>
+                    Get In touch
+                </h2>
+            </div>
+            <div class="">
+                <div class="row">
+                    <div class="col-md-7 mx-auto">
+                        <form action="#">
+                            <div class="contact_form-container">
+                                <div>
+                                    <div>
+                                        <input type="text" placeholder="Full Name" />
+                                    </div>
+                                    <div>
+                                        <input type="email" placeholder="Email " />
+                                    </div>
+                                    <div>
+                                        <input type="text" placeholder="Phone Number" />
+                                    </div>
+                                    <div class="">
+                                        <input type="text" placeholder="Message" class="message_input" />
+                                    </div>
+                                    <div class="btn-box ">
+                                        <button type="submit">
+                                            Send
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>
+                    Gallery
+                </h2>
+            </div>
+            <p>
+                Enjoy your time with friends and family at our restaurant recreational activities e.g. restaurant and pool,
+                <br>
+                and the best services ever!
+            </p>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 mx-auto ">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="{% static 'images/images.jpeg' %}" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                Restaurant
+                            </h5>
+                            <h6 class="">
+                                Best menu ever
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mx-auto ">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="{% static 'images/images (1).jpeg' %}" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                Acoomodation
+                            </h5>
+                            <h6 class="">
+                                with the best attendants
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mx-auto ">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="{% static 'images/images (2).jpeg' %}" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                The pool
+                            </h5>
+                            <h6 class="">
+                                Best time
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-box">
+                <a href="{% url 'services' %}">
+                    View All
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
