@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}My Bookings{% endblock %}
+
+{% block content %}
+<div class="hero_bg_box">
+    <div class="img-box">
+        <img src="{% static 'images/overview.jpg' %}" alt="">
+    </div>
+</div>
+<section class="layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>My Bookings</h2>
+        </div>
+        {% if bookings %}
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Service Type</th>
+                        <th>Details</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Booking Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for booking in bookings %}
+                    <tr>
+                        <td>{{ booking.get_service_type_display }}</td>
+                        <td>
+                            {% if booking.service_type == 'room' %}
+                                Room Type: {{ booking.get_room_type_display }}<br>
+                                Number of Days: {{ booking.num_days }}
+                            {% elif booking.service_type == 'conference' %}
+                                Conference Type: {{ booking.get_conference_type_display }}<br>
+                                Attendees: {{ booking.num_attendees }}<br>
+                                Date: {{ booking.conference_date }}
+                            {% elif booking.service_type == 'meal' %}
+                                Meal Type: {{ booking.get_meal_type_display }}<br>
+                                Details: {{ booking.meal_details }}
+                            {% elif booking.service_type == 'recreation' %}
+                                Type: {{ booking.get_recreation_type_display }}<br>
+                                Details: {{ booking.recreation_details }}
+                            {% endif %}
+                        </td>
+                        <td>{{ booking.name }}</td>
+                        <td>{{ booking.email }}</td>
+                        <td>{{ booking.phone }}</td>
+                        <td>{{ booking.booking_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            <p>You haven't made any bookings yet.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
