@@ -1,13 +1,13 @@
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('', views.register, name='register'),
-    path('login/', views.user_login, name='login'),
-    path('home/', views.home_view, name='home'),
-    path('logout/', views.user_logout, name='logout')
-]
-
-
-
-
+// database/migrations/xxxx_xx_xx_create_users_table.php
+Schema::create('users', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->string('email')->unique();
+    $table->string('username')->unique()->nullable();
+    $table->string('github_id')->nullable();
+    $table->string('github_token')->nullable();
+    $table->timestamp('email_verified_at')->nullable();
+    $table->string('password')->nullable(); // Nullable for social logins
+    $table->rememberToken();
+    $table->timestamps();
+});
